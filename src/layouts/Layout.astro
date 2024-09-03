@@ -1,4 +1,6 @@
 ---
+import "../style/reset.css"
+
 interface Props {
 	title: string;
 }
@@ -10,41 +12,25 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="This is my online resume in the form of a web page. Here you can find all information about my professional and some personal development. Want to have a look at the source code for this page? Go ahead and visit https://github.com/sreggers/sreggers.github.io">
+		<meta property="og:title" content="Resume - SReggers">
+		<meta property="og:description" content="This is my online resume in the form of a web page. Here you can find all information about my professional and some personal development. Want to have a look at the source code for this page? Go ahead and visit https://github.com/sreggers/sreggers.github.io">
+		<meta property="og:image" content="/image.png">
+		<meta property="og:image:alt" content="Sebastiaan Reggers">
+		<meta property="og:locale" content="en_GB">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="og:url" content="https://sreggers.github.io">
+		<link rel="canonical" href="https://sreggers.github.io">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="manifest" href="/my.webmanifest">
+		<meta name="theme-color" content="#3B77BC">
+
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
