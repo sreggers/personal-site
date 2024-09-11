@@ -75,20 +75,20 @@ const { title } = Astro.props;
 
 <ViewTransitions />
 
-<script>
-	const scrollspy_elems = document.querySelectorAll('#scrollspy .nav-elem');
-    const info_sections = document.querySelectorAll('.info-section section');
+<script is:inline data-astro-rerun>
+	window.scrollspy_elems = document.querySelectorAll('#scrollspy .nav-elem');
+    window.info_sections = document.querySelectorAll('.info-section section');
 
     window.onscroll = () => {
         let lastIndex = 0;
-        info_sections.forEach((s,i) => {
+        window.info_sections.forEach((s,i) => {
             const sectionTopPos = s.getBoundingClientRect().top;
             if (sectionTopPos < 100) {
                 lastIndex = i;
             }
         });
-        scrollspy_elems.forEach(e => e.classList.remove('active'))
-        scrollspy_elems.item(lastIndex).classList.add('active');
+        window.scrollspy_elems.forEach(e => e.classList.remove('active'))
+        window.scrollspy_elems.item(lastIndex).classList.add('active');
     }
 </script>
 
