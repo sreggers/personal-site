@@ -2,6 +2,8 @@
 import "../style/reset.css"
 import profileImage from '../images/profile.jpg'
 import { Image } from 'astro:assets';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -45,9 +47,8 @@ const { title } = Astro.props;
 					<li class="nav-elem"><a href="#education">Education</a></li>
 					<li class="nav-elem"><a href="#skills">Skills</a></li>
 					<li class="nav-elem">
-						<button>en</button>
-						&nbsp;
-						<button>nl</button>
+						<a href={getRelativeLocaleUrl("en")}>en</a>
+						<a href={getRelativeLocaleUrl("de")}>de</a>
 					</li>
 				</ul>
 			</nav>
@@ -71,6 +72,8 @@ const { title } = Astro.props;
 		</main>
 	</body>
 </html>
+
+<ViewTransitions />
 
 <script>
 	const scrollspy_elems = document.querySelectorAll('#scrollspy .nav-elem');
@@ -176,14 +179,6 @@ const { title } = Astro.props;
 		text-decoration: none;
 		font-weight: 500;
 		color: #000000;
-	}
-
-	.nav-elem button {
-		font-weight: 500;
-		color: #000000;
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
 	}
 
 	.nav-elem-list .nav-elem a:hover,
