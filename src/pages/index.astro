@@ -1,259 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import profileImage from '../images/profile.jpg'
-import { Image } from 'astro:assets';
 ---
 
 <Layout title="Resume - SReggers">
-	<header id="hero">
-		<nav class="hero-navbar" aria-labelledby="header-navigation">
-			<h3 id="header-navigation" class="nav-brand">S<span class="header-accent">.</span>Reggers</h3>
-			<button class="nav-toggle">
-				<img alt="toggle">
-			</button>
-			<ul class="nav-elem-list" :class="{ open: active }">
-				<li class="nav-elem"><a href="#about">About</a></li>
-				<li class="nav-elem"><a href="#experience">Experience</a></li>
-				<li class="nav-elem"><a href="#education">Education</a></li>
-				<li class="nav-elem"><a href="#skills">Skills</a></li>
-				<li class="nav-elem">
-				<button>en</button>
-				&nbsp;
-				<button>nl</button>
-				</li>
-			</ul>
-		</nav>
-		<Image src={profileImage} alt="{navbar.imgalt}" class="hero-image" />
-	</header>
-	<main id="content">
-		<div class="content-spacer">
-			<section class="info-section">
-				<section id="about">
-					<header><h1>Hello there!</h1></header>
-					<article>
-						<p>My name is Sebastiaan Reggers and I'm currently working as a <span class="highlight">fullstack developer</span> for the inSign software from IS2. As a programmer I get the most satisfaction out of developing an <span class="highlight">intuative and accessible</span> frontend built on top of a <span class="highlight">robust and secure</span> backend.</p>
-						<p>Outside of my professional carreer I like to work on hobby projects. These projects can vary between trying out <span class="highlight">new web technologies</span>, such as Svelte and Astro, writing and playing <span class="highlight">Dungeons and Dragons</span> campaigns, creating <span class="highlight">rom hacks</span> of my favorite childhood games, experimenting with <span class="highlight">embedded devices</span>, such as the rasperry pi and organizing another, probably doomed, fortress in the game <span class="highlight">Dwarf Fortress</span>.</p>
-					</article>
-				</section>
-				<section id="experience">
-					<header><h2>Experience</h2></header>
-					<article>
-						<h3 class="article-header">Software Developer</h3>
-						<h4 class="article-subheader">iS2 Intelligent Solution Services AG</h4>
-						<h5 class="article-extra">2020 - 2022</h5>
-						<p>At IS2 I worked as a Full-stack Java/Javascript developer for the inSign Digital Signature platform.
-						This position introduced me to coding in a complex and feature-rich production environment.</p>
-						<p>The subjects covered by this studies were:</p>
-						<ul>
-						</ul>
-					</article>
-				</section>
-				<section id="education">
-					<header><h2>Education</h2></header>
-					<article>
-						<h3 class="article-header">Häme University of Applied Sciences, HAMK</h3>
-						<h4 class="article-subheader">Bachelor of Applied Science -  Business Information Technology</h4>
-						<h5 class="article-extra">2019 - 2020</h5>
-						<p>Double degree programme in Finland, organised by Erasmus, in cooperation with the Thomas More University. This programme helped me approach my studies from a different point of view, due to the more individualistic study methods used in the Finnish education system.</p>
-						<p>The subjects covered by this studies were:</p>
-						<ul>
-							<li>Cloud-based full-stack Mobile Development</li>
-							<li>Business Administration and Business Intelligence</li>
-							<li>Thesis in Geospatial Data Analysis</li>
-							<li>Project in Virtual Studio Movie Capturing</li>
-						</ul>
-					</article>
-					<article>
-						<h3 class="article-header">Thomas More University of Applied Sciences</h3>
-						<h4 class="article-subheader">Bachelor of Applied Science - Computer Science</h4>
-						<h5 class="article-extra">2017 - 2020</h5>
-						<p>Bachelor degree programme in Belgium, with a primary focus on Full-stack Application Development. This studies helped me approach programming in a more structured way and introduced me to several different programming languages and working methods.</p>
-						<p>The subjects covered by this studies were:</p>
-						<ul>
-							<li>Full-stack Application Development in Windows and Linux Distributions</li>
-							<li>ERP Software Management and Project Planning</li>
-							<li>Basics of Networking and Embedded Devices</li>
-							<li>Basics of Business Management</li>
-						</ul>
-					</article>
-					<article>
-						<h3 class="article-header">KU Leuven</h3>
-						<h4 class="article-subheader">Bachelor of Science, Biochemistry and Biotechnology, unfinished</h4>
-						<h5 class="article-extra">2016 - 2017</h5>
-						<p>The first two semesters of this studies taught me some studying methods, but also made me realize this was not a path I wanted to follow.</p>
-					</article>
-					<article>
-						<h3 class="article-header">Escuela Técnica Nº35, Crespo, Argentina</h3>
-						<h4 class="article-subheader">High School, Business Administration</h4>
-						<h5 class="article-extra">2015 - 2016</h5>
-						<p>Two semesters at a local, technical, high school during my exchange year in Argentina, organized by AFS. This was my first long-term international experience and got me hooked.</p>
-					</article>
-					<article>
-						<h3 class="article-header">Onze-Lieve-Vrouwecollege, Antwerpen</h3>
-						<h4 class="article-subheader">High School, Latin-Sciences'</h4>
-						<h5 class="article-extra">2009 - 2015</h5>
-						<p>General high school education (ASO).</p>
-					</article>
-				</section>
-				<section id="skills">
-					<header><h2 v-t="'skills.header'">Skills</h2></header>
-					<article></article>
-				</section>
-			</section>
-			<aside id="scrollspy">
-				<nav v-scope="Navbar(true)" class="scrollspy-navbar" aria-labelledby="scrollspy-navigation">
-					<ul class="nav-elem-list">
-						<li class="nav-elem active"><a href="#about">About</a></li>
-						<li class="nav-elem"><a href="#experience">Experience</a></li>
-						<li class="nav-elem"><a href="#education">Education</a></li>
-						<li class="nav-elem"><a href="#skills">Skills</a></li>
-					</ul>
-				</nav>
-			</aside>
-		</div>
-	</main>
+	<section class="info-section">
+		<section id="about">
+			<header><h1>Hello there!</h1></header>
+			<article>
+				<p>My name is Sebastiaan Reggers and I'm currently working as a <span class="highlight">fullstack developer</span> for the inSign software from IS2. As a programmer I get the most satisfaction out of developing an <span class="highlight">intuative and accessible</span> frontend built on top of a <span class="highlight">robust and secure</span> backend.</p>
+				<p>Outside of my professional carreer I like to work on hobby projects. These projects can vary between trying out <span class="highlight">new web technologies</span>, such as Svelte and Astro, writing and playing <span class="highlight">Dungeons and Dragons</span> campaigns, creating <span class="highlight">rom hacks</span> of my favorite childhood games, experimenting with <span class="highlight">embedded devices</span>, such as the rasperry pi and organizing another, probably doomed, fortress in the game <span class="highlight">Dwarf Fortress</span>.</p>
+			</article>
+		</section>
+		<section id="experience">
+			<header><h2>Experience</h2></header>
+			<article>
+				<h3 class="article-header">Software Developer</h3>
+				<h4 class="article-subheader">iS2 Intelligent Solution Services AG</h4>
+				<h5 class="article-extra">2020 - 2022</h5>
+				<p>At IS2 I worked as a Full-stack Java/Javascript developer for the inSign Digital Signature platform.
+				This position introduced me to coding in a complex and feature-rich production environment.</p>
+				<p>The subjects covered by this studies were:</p>
+				<ul>
+				</ul>
+			</article>
+		</section>
+		<section id="education">
+			<header><h2>Education</h2></header>
+			<article>
+				<h3 class="article-header">Häme University of Applied Sciences, HAMK</h3>
+				<h4 class="article-subheader">Bachelor of Applied Science -  Business Information Technology</h4>
+				<h5 class="article-extra">2019 - 2020</h5>
+				<p>Double degree programme in Finland, organised by Erasmus, in cooperation with the Thomas More University. This programme helped me approach my studies from a different point of view, due to the more individualistic study methods used in the Finnish education system.</p>
+				<p>The subjects covered by this studies were:</p>
+				<ul>
+					<li>Cloud-based full-stack Mobile Development</li>
+					<li>Business Administration and Business Intelligence</li>
+					<li>Thesis in Geospatial Data Analysis</li>
+					<li>Project in Virtual Studio Movie Capturing</li>
+				</ul>
+			</article>
+			<article>
+				<h3 class="article-header">Thomas More University of Applied Sciences</h3>
+				<h4 class="article-subheader">Bachelor of Applied Science - Computer Science</h4>
+				<h5 class="article-extra">2017 - 2020</h5>
+				<p>Bachelor degree programme in Belgium, with a primary focus on Full-stack Application Development. This studies helped me approach programming in a more structured way and introduced me to several different programming languages and working methods.</p>
+				<p>The subjects covered by this studies were:</p>
+				<ul>
+					<li>Full-stack Application Development in Windows and Linux Distributions</li>
+					<li>ERP Software Management and Project Planning</li>
+					<li>Basics of Networking and Embedded Devices</li>
+					<li>Basics of Business Management</li>
+				</ul>
+			</article>
+			<article>
+				<h3 class="article-header">KU Leuven</h3>
+				<h4 class="article-subheader">Bachelor of Science, Biochemistry and Biotechnology, unfinished</h4>
+				<h5 class="article-extra">2016 - 2017</h5>
+				<p>The first two semesters of this studies taught me some studying methods, but also made me realize this was not a path I wanted to follow.</p>
+			</article>
+			<article>
+				<h3 class="article-header">Escuela Técnica Nº35, Crespo, Argentina</h3>
+				<h4 class="article-subheader">High School, Business Administration</h4>
+				<h5 class="article-extra">2015 - 2016</h5>
+				<p>Two semesters at a local, technical, high school during my exchange year in Argentina, organized by AFS. This was my first long-term international experience and got me hooked.</p>
+			</article>
+			<article>
+				<h3 class="article-header">Onze-Lieve-Vrouwecollege, Antwerpen</h3>
+				<h4 class="article-subheader">High School, Latin-Sciences'</h4>
+				<h5 class="article-extra">2009 - 2015</h5>
+				<p>General high school education (ASO).</p>
+			</article>
+		</section>
+		<section id="skills">
+			<header><h2 v-t="'skills.header'">Skills</h2></header>
+			<article></article>
+		</section>
+	</section>
 </Layout>
 
 <style>
-	@font-face {
-		font-family: "OpenSans";
-		font-weight: 400;
-		src: url("/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
-	}
-
-	@font-face {
-		font-family: "OpenSans";
-		font-weight: 500;
-		src: url("/fonts/OpenSans/OpenSans-Medium.ttf") format("truetype");
-	}
-
-	@font-face {
-		font-family: "OpenSans";
-		font-weight: 600;
-		src: url("/fonts/OpenSans/OpenSans-SemiBold.ttf") format("truetype");
-	}
-
-	@font-face {
-		font-family: "OpenSans";
-		font-weight: 700;
-		src: url("/fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
-	}
-
-	body {
-		font-family: "OpenSans", sans-serif;
-		font-size: 16px;
-		background-color: #3B77BC;
-	}
-
-	#hero {
-		padding: 1em 2em;
-		background-color: #3B77BC;
-	}
-
-	.hero-navbar {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-	}
-
-	.nav-brand {
-		font-size: 1.75em;
-		color: #F9F9F9;
-	}
-
-	.header-accent {
-		color: #FCCF03;
-		font-size: 1.2em;
-	}
-
-	.nav-toggle {
-		margin-left: auto;
-		background-color: transparent;
-		border: 0;
-		color: #F9F9F9;
-		cursor: pointer;
-	}
-
-	.nav-elem-list {
-		display: flex;
-		list-style-type: none;
-		flex-direction: column;
-		padding-left: 0;
-	}
-
-	.hero-navbar .nav-elem-list {
-		width: 100%;
-		max-height: 0;
-		transition: max-height 0.3s linear;
-		overflow-y: hidden;
-	}
-
-	.hero-navbar .nav-elem-list.open {
-		height: auto;
-		max-height: 300px;
-	}
-
-	.nav-elem a {
-		text-decoration: none;
-		font-weight: 500;
-		color: #000000;
-	}
-
-	.nav-elem button {
-		font-weight: 500;
-		color: #000000;
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-	}
-
-	.nav-elem-list .nav-elem a:hover,
-	.nav-elem-list .nav-elem a:focus,
-	.nav-elem-list .nav-elem button:hover,
-	.nav-elem-list .nav-elem button:focus {
-		color: #FCCF03;
-	}
-
-	.nav-elem.active a,
-	.nav-elem button.active {
-		border-bottom: 2px solid #FCCF03;
-	}
-
-	.hero-navbar .nav-elem a {
-		padding: 1em 0;
-		width: 100%
-	}
-
-	.hero-navbar .nav-elem a,
-	.hero-navbar .nav-elem button {
-		color: #F9F9F9;
-		display: inline-block;
-	}
-	
-	.hero-navbar .nav-elem:last-child {
-		padding-top: 1em;
-	}
-
-	.hero-image {
-		width: 200px;
-		height: 200px;
-		border: 5px solid #000000;
-		margin-left: auto;
-		position: relative;
-		top: 75px;
-		margin-top: -50px;
-	}
-
-	#content {
-		background-color: #F9F9F9;
-		border-top: 5px solid #000000;
-	}
-
-	.content-spacer {
-		display: flex;
-		padding: 0 2em;
-	}
-
 	.info-section {
 		padding-top: 50px;
 		width: 100%;
@@ -304,69 +129,7 @@ import { Image } from 'astro:assets';
 		border-bottom: 2px solid #FCCF03;
 	}
 
-	#scrollspy {
-		display: none;
-	}
-
-	@media only screen and (min-width: 768px) {
-
-		#hero {
-			margin: 0 auto;
-			width: 100%;
-			max-width: 1100px;
-			padding: 1em 3em;
-			background-color: #3B77BC;
-		}
-
-		.nav-toggle {
-			display: none;
-		}
-
-		.hero-navbar {
-			align-items: baseline;
-		}
-		
-		.hero-navbar .nav-elem-list {
-			margin-left: 2em;
-			min-height: auto;
-			max-height: inherit;
-			width: auto;
-			background-color: transparent;
-			flex-direction: row;
-			flex-grow: 1;
-		}
-		
-		.hero-navbar .nav-elem:last-child {
-			padding-top: 0;
-			margin-left: auto;
-		}
-
-		.hero-navbar .nav-elem a,
-		.hero-navbar .nav-elem button {
-			line-height: 1em;
-			padding: 0.5em 0;
-			width: auto;
-		}
-
-		.hero-navbar .nav-elem a {
-			padding-left: 1em;
-			padding-right: 1em;
-		}
-
-		.content-spacer {
-			margin: 0 auto;
-			width: 100%;
-			max-width: 1100px;
-			padding: 0 3em;
-		}
-
-	}
-
 	@media only screen and (min-width: 768px) and (min-height: 575px) {
-
-		.content-spacer {
-			padding: 0;
-		}
 
 		.info-section {
 			padding: 0 3em;
@@ -376,71 +139,13 @@ import { Image } from 'astro:assets';
 		.info-section section {
 			min-height: 95vh
 		}
+		
+	}
 
-		#scrollspy {
-			display: block;
-			width: 25%;
-			border-left: 5px solid #000000;
-		}
-		
-		.scrollspy-navbar {
-			position: fixed;
-			top: 350px;
-		}
-		
-		.scrollspy-navbar .nav-elem-list {
-			background-color: #FCCF03;
-			height: 95vh;
-			width: 50vw;
-			overflow: hidden;
-		}
-		
-		.scrollspy-navbar .nav-elem {
-			width: 100%;
-			height: auto;
-		}
-
-		.scrollspy-navbar .nav-elem a {
-			display: inline-block;
-			padding: 1em 1em;
-			width: 100%;
-			background-color: #F9F9F9;
-		}
-		
-		.scrollspy-navbar .nav-elem.active a {
-			border-bottom: 5px solid #000000;
-		}
-		
-		.scrollspy-navbar .nav-elem.active ~ .nav-elem a {
-			background-color: #FCCF03;
-		}
-		
-		.scrollspy-navbar .nav-elem.active ~ .nav-elem a:hover,
-		.scrollspy-navbar .nav-elem.active ~ .nav-elem a:focus {
-			color: #F9F9F9;
-		}
-		
-		}
-
-		@media only screen and (min-width: 1200px) {
-		body {
-			background: linear-gradient(to right, #DE482B 50%, #3B77BC 50%);
-		}
-
-		#hero {
-			border-left: 5px solid #000000;
-		}
-
-		.content-spacer {
-			border-left: 5px solid #000000;
-		}
+	@media only screen and (min-width: 1200px) {
 
 		.info-section {
 			min-width: 85%;
-		}
-
-		#scrollspy {
-			width: 15%;
 		}
 
 	}

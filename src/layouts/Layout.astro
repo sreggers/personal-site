@@ -1,5 +1,7 @@
 ---
 import "../style/reset.css"
+import profileImage from '../images/profile.jpg'
+import { Image } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -31,6 +33,311 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header id="hero">
+			<nav class="hero-navbar" aria-labelledby="header-navigation">
+				<h3 id="header-navigation" class="nav-brand">S<span class="header-accent">.</span>Reggers</h3>
+				<button class="nav-toggle">
+					<img alt="toggle">
+				</button>
+				<ul class="nav-elem-list" :class="{ open: active }">
+					<li class="nav-elem"><a href="#about">About</a></li>
+					<li class="nav-elem"><a href="#experience">Experience</a></li>
+					<li class="nav-elem"><a href="#education">Education</a></li>
+					<li class="nav-elem"><a href="#skills">Skills</a></li>
+					<li class="nav-elem">
+					<button>en</button>
+					&nbsp;
+					<button>nl</button>
+					</li>
+				</ul>
+			</nav>
+			<Image src={profileImage} alt="{navbar.imgalt}" class="hero-image" />
+		</header>
+		
+		<main id="content">
+			<div class="content-spacer">
+				<slot />
+				<aside id="scrollspy">
+					<nav v-scope="Navbar(true)" class="scrollspy-navbar" aria-labelledby="scrollspy-navigation">
+						<ul class="nav-elem-list">
+							<li class="nav-elem active"><a href="#about">About</a></li>
+							<li class="nav-elem"><a href="#experience">Experience</a></li>
+							<li class="nav-elem"><a href="#education">Education</a></li>
+							<li class="nav-elem"><a href="#skills">Skills</a></li>
+						</ul>
+					</nav>
+				</aside>
+			</div>
+		</main>
 	</body>
 </html>
+
+<style>
+	@font-face {
+		font-family: "OpenSans";
+		font-weight: 400;
+		src: url("/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+	}
+
+	@font-face {
+		font-family: "OpenSans";
+		font-weight: 500;
+		src: url("/fonts/OpenSans/OpenSans-Medium.ttf") format("truetype");
+	}
+
+	@font-face {
+		font-family: "OpenSans";
+		font-weight: 600;
+		src: url("/fonts/OpenSans/OpenSans-SemiBold.ttf") format("truetype");
+	}
+
+	@font-face {
+		font-family: "OpenSans";
+		font-weight: 700;
+		src: url("/fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+	}
+
+	body {
+		font-family: "OpenSans", sans-serif;
+		font-size: 16px;
+		background-color: #3B77BC;
+	}
+
+	#hero {
+		padding: 1em 2em;
+		background-color: #3B77BC;
+	}
+
+	.hero-navbar {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.nav-brand {
+		font-size: 1.75em;
+		color: #F9F9F9;
+	}
+
+	.header-accent {
+		color: #FCCF03;
+		font-size: 1.2em;
+	}
+
+	.nav-toggle {
+		margin-left: auto;
+		background-color: transparent;
+		border: 0;
+		color: #F9F9F9;
+		cursor: pointer;
+	}
+
+	.nav-elem-list {
+		display: flex;
+		list-style-type: none;
+		flex-direction: column;
+		padding-left: 0;
+	}
+
+	.hero-navbar .nav-elem-list {
+		width: 100%;
+		max-height: 0;
+		transition: max-height 0.3s linear;
+		overflow-y: hidden;
+	}
+
+	.hero-navbar .nav-elem-list.open {
+		height: auto;
+		max-height: 300px;
+	}
+
+	.nav-elem a {
+		text-decoration: none;
+		font-weight: 500;
+		color: #000000;
+	}
+
+	.nav-elem button {
+		font-weight: 500;
+		color: #000000;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	.nav-elem-list .nav-elem a:hover,
+	.nav-elem-list .nav-elem a:focus,
+	.nav-elem-list .nav-elem button:hover,
+	.nav-elem-list .nav-elem button:focus {
+		color: #FCCF03;
+	}
+
+	.nav-elem.active a,
+	.nav-elem button.active {
+		border-bottom: 2px solid #FCCF03;
+	}
+
+	.hero-navbar .nav-elem a {
+		padding: 1em 0;
+		width: 100%
+	}
+
+	.hero-navbar .nav-elem a,
+	.hero-navbar .nav-elem button {
+		color: #F9F9F9;
+		display: inline-block;
+	}
+	
+	.hero-navbar .nav-elem:last-child {
+		padding-top: 1em;
+	}
+
+	.hero-image {
+		width: 200px;
+		height: 200px;
+		border: 5px solid #000000;
+		margin-left: auto;
+		position: relative;
+		top: 75px;
+		margin-top: -50px;
+	}
+	
+	#content {
+		background-color: #F9F9F9;
+		border-top: 5px solid #000000;
+	}
+
+	.content-spacer {
+		display: flex;
+		padding: 0 2em;
+	}
+
+	#scrollspy {
+		display: none;
+	}
+
+	@media only screen and (min-width: 768px) {
+		
+		#hero {
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1100px;
+			padding: 1em 3em;
+			background-color: #3B77BC;
+		}
+
+		.nav-toggle {
+			display: none;
+		}
+
+		.hero-navbar {
+			align-items: baseline;
+		}
+
+		.hero-navbar .nav-elem-list {
+			margin-left: 2em;
+			min-height: auto;
+			max-height: inherit;
+			width: auto;
+			background-color: transparent;
+			flex-direction: row;
+			flex-grow: 1;
+		}
+
+		.hero-navbar .nav-elem:last-child {
+			padding-top: 0;
+			margin-left: auto;
+		}
+
+		.hero-navbar .nav-elem a,
+		.hero-navbar .nav-elem button {
+			line-height: 1em;
+			padding: 0.5em 0;
+			width: auto;
+		}
+
+		.hero-navbar .nav-elem a {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
+		.content-spacer {
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1100px;
+			padding: 0 3em;
+		}
+
+	}
+
+	@media only screen and (min-width: 768px) and (min-height: 575px) {
+
+		.content-spacer {
+			padding: 0;
+		}
+
+		#scrollspy {
+			display: block;
+			width: 25%;
+			border-left: 5px solid #000000;
+		}
+
+		.scrollspy-navbar {
+			position: fixed;
+			top: 350px;
+		}
+
+		.scrollspy-navbar .nav-elem-list {
+			background-color: #FCCF03;
+			height: 95vh;
+			width: 50vw;
+			overflow: hidden;
+		}
+
+		.scrollspy-navbar .nav-elem {
+			width: 100%;
+			height: auto;
+		}
+
+		.scrollspy-navbar .nav-elem a {
+			display: inline-block;
+			padding: 1em 1em;
+			width: 100%;
+			background-color: #F9F9F9;
+		}
+
+		.scrollspy-navbar .nav-elem.active a {
+			border-bottom: 5px solid #000000;
+		}
+
+		.scrollspy-navbar .nav-elem.active ~ .nav-elem a {
+			background-color: #FCCF03;
+		}
+
+		.scrollspy-navbar .nav-elem.active ~ .nav-elem a:hover,
+		.scrollspy-navbar .nav-elem.active ~ .nav-elem a:focus {
+			color: #F9F9F9;
+		}
+
+	}
+
+	@media only screen and (min-width: 1200px) {
+
+		.content-spacer {
+			border-left: 5px solid #000000;
+		}
+
+		body {
+			background: linear-gradient(to right, #DE482B 50%, #3B77BC 50%);
+		}
+
+		#hero {
+			border-left: 5px solid #000000;
+		}
+
+		#scrollspy {
+			width: 15%;
+		}
+
+	}
+</style>
