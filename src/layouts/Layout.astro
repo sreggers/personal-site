@@ -41,7 +41,7 @@ const { title } = Astro.props;
 				<button class="nav-toggle">
 					<img alt="toggle">
 				</button>
-				<ul class="nav-elem-list" :class="{ open: active }">
+				<ul class="nav-elem-list">
 					<li class="nav-elem"><a href="#about">About</a></li>
 					<li class="nav-elem"><a href="#experience">Experience</a></li>
 					<li class="nav-elem"><a href="#education">Education</a></li>
@@ -59,7 +59,7 @@ const { title } = Astro.props;
 			<div class="content-spacer">
 				<slot />
 				<aside id="scrollspy">
-					<nav v-scope="Navbar(true)" class="scrollspy-navbar" aria-labelledby="scrollspy-navigation">
+					<nav class="scrollspy-navbar" aria-labelledby="scrollspy-navigation">
 						<ul class="nav-elem-list">
 							<li class="nav-elem active"><a href="#about">About</a></li>
 							<li class="nav-elem"><a href="#experience">Experience</a></li>
@@ -78,6 +78,16 @@ const { title } = Astro.props;
 <script is:inline data-astro-rerun>
 	window.scrollspy_elems = document.querySelectorAll('#scrollspy .nav-elem');
     window.info_sections = document.querySelectorAll('.info-section section');
+	window.nav_toggle_elem = document.querySelector(".nav-toggle");
+	window.nav_toggle_open = false;
+	window.nav_toggle_elem.querySelector("img").src = "/personal-site/icons/dropdown-toggle-closed.svg";
+
+	window.nav_toggle_elem.addEventListener("click", () => {
+		window.nav_toggle_open = !window.nav_toggle_open;
+		const toggle_svg = window.nav_toggle_open ? "/personal-site/icons/dropdown-toggle-open.svg" : "/personal-site/icons/dropdown-toggle-closed.svg";
+		window.nav_toggle_elem.querySelector("img").src = toggle_svg;
+		window.nav_toggle_elem.nextElementSibling.classList.toggle("open", window.nav_toggle_open);
+	});
 
     window.onscroll = () => {
         let lastIndex = 0;
