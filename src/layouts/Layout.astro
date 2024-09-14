@@ -47,8 +47,7 @@ const { title } = Astro.props;
 					<li class="nav-elem"><a href="#education">Education</a></li>
 					<li class="nav-elem"><a href="#skills">Skills</a></li>
 					<li class="nav-elem">
-						<a href={getRelativeLocaleUrl("en")}>en</a>
-						<a href={getRelativeLocaleUrl("de")}>de</a>
+						<a class="language-select" href={getRelativeLocaleUrl("en")}>en</a>|<a class="language-select" href={getRelativeLocaleUrl("de")}>de</a>
 					</li>
 				</ul>
 			</nav>
@@ -203,15 +202,20 @@ const { title } = Astro.props;
 		border-bottom: 2px solid #FCCF03;
 	}
 
-	.hero-navbar .nav-elem a {
-		padding: 1em 0;
-		width: 100%
+	.hero-navbar .nav-elem {
+		color: #F9F9F9;
 	}
 
-	.hero-navbar .nav-elem a,
-	.hero-navbar .nav-elem button {
+	.hero-navbar .nav-elem a {
+		padding: 1em 0;
+		width: 100%;
 		color: #F9F9F9;
 		display: inline-block;
+	}
+
+	.hero-navbar .nav-elem a.language-select {
+		padding: 0.25em 0;
+		width: auto;
 	}
 	
 	.hero-navbar .nav-elem:last-child {
