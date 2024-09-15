@@ -2,80 +2,115 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Resume - SReggers">
+<Layout title="Lebenslauf - SReggers">
 	<section class="info-section">
-        <section id="about">
-            <header><h1>Hallo!</h1></header>
-            <article>
-                <p>Mein Name ist Sebastiaan Reggers und ich arbeite derzeit als <span class="highlight">Fullstack-Entwickler</span> für die inSign-Software von IS2. Als Programmierer bekomme ich die meiste Zufriedenheit aus der Entwicklung eines <span class="highlight">intuitiven und zugänglichen</span> Frontends, das auf einem <span class="highlight">robusten und sicheren</span> Backend aufgebaut ist.</p>
-                <p>Außerhalb meiner beruflichen Karriere arbeite ich gerne an Hobbyprojekten. Diese Projekte können von der Erprobung <span class="highlight">neuer Webtechnologien</span> wie Svelte und Astro, über das Schreiben und Spielen von <span class="highlight">Dungeons and Dragons</span>-Kampagnen, das Erstellen von <span class="highlight">ROM-Hacks</span> meiner Lieblingsspiele aus der Kindheit, bis hin zum Experimentieren mit <span class="highlight">eingebetteten Geräten</span> wie dem Raspberry Pi und der Organisation einer weiteren, wahrscheinlich zum Scheitern verurteilten Festung im Spiel <span class="highlight">Dwarf Fortress</span> reichen.</p>
-            </article>
-        </section>
-        <section id="experience">
-            <header><h2>Erfahrung</h2></header>
-            <article>
-                <h3 class="article-header">Softwareentwickler</h3>
-                <h4 class="article-subheader">iS2 Intelligent Solution Services AG</h4>
-                <h5 class="article-extra">2020 - 2022</h5>
-                <p>Bei IS2 arbeitete ich als Full-Stack-Java/Javascript-Entwickler für die inSign-Digital-Signature-Plattform. Diese Position führte mich in das Programmieren in einer komplexen und funktionsreichen Produktionsumgebung ein.</p>
-                <p>Die Themen, die in diesen Studien behandelt wurden, waren:</p>
-                <ul>
-                </ul>
-            </article>
-        </section>
-        <section id="education">
-            <header><h2>Bildung</h2></header>
-            <article>
-                <h3 class="article-header">Häme University of Applied Sciences, HAMK</h3>
-                <h4 class="article-subheader">Bachelor of Applied Science - Business Information Technology</h4>
-                <h5 class="article-extra">2019 - 2020</h5>
-                <p>Doppelabschlussprogramm in Finnland, organisiert von Erasmus, in Zusammenarbeit mit der Thomas More University. Dieses Programm half mir, meine Studien aus einer anderen Perspektive zu betrachten, aufgrund der individuelleren Lernmethoden im finnischen Bildungssystem.</p>
-                <p>Die Themen, die in diesen Studien behandelt wurden, waren:</p>
-                <ul>
-                    <li>Cloud-basierte Full-Stack-Mobile-Entwicklung</li>
-                    <li>Geschäftsverwaltung und Business Intelligence</li>
-                    <li>Thesis in Geospatial Data Analysis</li>
-                    <li>Projekt im Virtual Studio Movie Capturing</li>
-                </ul>
-            </article>
-            <article>
-                <h3 class="article-header">Thomas More University of Applied Sciences</h3>
-                <h4 class="article-subheader">Bachelor of Applied Science - Informatik</h4>
-                <h5 class="article-extra">2017 - 2020</h5>
-                <p>Bachelor-Studiengang in Belgien, mit einem primären Fokus auf Full-Stack-Anwendungsentwicklung. Diese Studien halfen mir, das Programmieren strukturierter anzugehen und führten mich in mehrere verschiedene Programmiersprachen und Arbeitsmethoden ein.</p>
-                <p>Die Themen, die in diesen Studien behandelt wurden, waren:</p>
-                <ul>
-                    <li>Full-Stack-Anwendungsentwicklung in Windows- und Linux-Distributionen</li>
-                    <li>ERP-Software-Management und Projektplanung</li>
-                    <li>Grundlagen der Netzwerktechnik und eingebetteter Geräte</li>
-                    <li>Grundlagen des Geschäftsmanagements</li>
-                </ul>
-            </article>
-            <article>
-                <h3 class="article-header">KU Leuven</h3>
-                <h4 class="article-subheader">Bachelor of Science, Biochemie und Biotechnologie, nicht abgeschlossen</h4>
-                <h5 class="article-extra">2016 - 2017</h5>
-                <p>Die ersten beiden Semester dieses Studiums lehrten mich einige Lernmethoden, ließen mich aber auch erkennen, dass dies nicht der Weg war, den ich einschlagen wollte.</p>
-            </article>
-            <article>
-                <h3 class="article-header">Escuela Técnica Nº35, Crespo, Argentinien</h3>
-                <h4 class="article-subheader">High School, Geschäftsverwaltung</h4>
-                <h5 class="article-extra">2015 - 2016</h5>
-                <p>Zwei Semester an einer lokalen technischen High School während meines Austauschjahres in Argentinien, organisiert von AFS. Dies war meine erste langfristige internationale Erfahrung und hat mich begeistert.</p>
-            </article>
-            <article>
-                <h3 class="article-header">Onze-Lieve-Vrouwecollege, Antwerpen</h3>
-                <h4 class="article-subheader">High School, Latein-Wissenschaften</h4>
-                <h5 class="article-extra">2009 - 2015</h5>
-                <p>Allgemeine Hochschulbildung (ASO).</p>
-            </article>
-        </section>
-        <section id="skills">
-            <header><h2 v-t="'skills.header'">Fähigkeiten</h2></header>
-            <article></article>
-        </section>
-    </section>    
+		<section id="about">
+			<header><h1>Hallo!</h1></header>
+			<article>
+				<p>Mein Name ist Sebastiaan Reggers und ich arbeite derzeit als <span class="highlight">Fullstack-Entwickler</span> für die inSign-Software von IS2. Als Programmierer bekomme ich die meiste Zufriedenheit aus der Entwicklung eines <span class="highlight">intuitiven und zugänglichen</span> Frontends, das auf einem <span class="highlight">robusten und sicheren</span> Backend aufgebaut ist.</p>
+				<p>Außerhalb meiner beruflichen Karriere arbeite ich gerne an Hobbyprojekten. Diese Projekte können variieren zwischen dem Ausprobieren von <span class="highlight">neuen Webtechnologien</span> wie Svelte und Astro, dem Schreiben und Spielen von <span class="highlight">Dungeons and Dragons</span>-Kampagnen, dem Erstellen von <span class="highlight">ROM-Hacks</span> meiner Lieblingsspiele aus der Kindheit, dem Experimentieren mit <span class="highlight">eingebetteten Geräten</span> wie dem Raspberry Pi und dem Organisieren einer weiteren, wahrscheinlich zum Scheitern verurteilten Festung im Spiel <span class="highlight">Dwarf Fortress</span>.</p>
+			</article>
+		</section>
+		<section id="experience">
+			<header><h2>Erfahrung</h2></header>
+			<article>
+				<h3 class="article-header">Java-Anwendungsentwickler</h3>
+				<h4 class="article-subheader">Finanzamt Niederlande</h4>
+				<h5 class="article-extra">2022 - 2024</h5>
+				<p>Beim Finanzamt arbeite ich an einem Innovationsprojekt für die Nachrichtenströme, die kontinuierlich von der Firma verarbeitet werden.
+				Das Projekt konzentriert sich auf Flexibilität, Anpassungsfähigkeit an EU-Gesetze und die Umstellung auf die aktuelle Softwarelandschaft.
+				<br /><br />
+				Ich bin Teil eines kleineren Scrum-Entwicklungsteams, in dem ich die Rolle des Lead-Entwicklers übernommen habe und eng mit den Testingenieuren, Betriebsingenieuren, funktionalen Prozessdesignern und dem Product Owner zusammenarbeite.
+				<br /><br />
+				Außerhalb der Softwareentwicklung bin ich auch sehr in die Aufwandsschätzung von Aufgaben, die Beratung zu technischen Lösungen und die Präsentation unserer Entwicklungsergebnisse gegenüber unseren Geschäftspartnern und Stakeholdern involviert.
+				<br /><br />
+				In dieser Position hatte ich auch die Möglichkeit, meine Mentoring-Fähigkeiten zu verbessern, indem ich als Praktikumsberater und Trainer für einen neuen Java-Trainee tätig war.</p>
+			</article>
+			<article>
+				<h3 class="article-header">Java-Softwareentwickler</h3>
+				<h4 class="article-subheader">JCore</h4>
+				<h5 class="article-extra">2022 - 2024</h5>
+				<p>JCore hilft mir, meine Karriere voranzutreiben, indem es jede Woche tiefgehende und praxisnahe Workshops organisiert.
+				Dank ihres Fast-Track-Programms habe ich die Möglichkeit, 10% meiner Arbeitszeit für Workshops und Konferenzen zu nutzen und gleichzeitig die anderen 90% für das Sammeln von mehr Praxiserfahrung zu verwenden.</p>
+				<p>Einige Themen, die in diesen Workshops behandelt wurden:</p>
+				<ul>
+					<li>Domain Driven Design und Event Driven Architecture</li>
+					<li>Funktionale Programmierung und Hexagonale Architektur</li>
+					<li>Die Geheimnisse der Spring "Magie" aufdecken</li>
+					<li>Einführungen in Kotlin, Kafka, NoSql und mehr</li>
+					<li>Frontend-Deep-Dive (React, Angular, Vue, Typescript)</li>
+				</ul>
+			</article>
+			<article>
+				<h3 class="article-header">Softwareentwickler</h3>
+				<h4 class="article-subheader">iS2 Intelligent Solution Services AG</h4>
+				<h5 class="article-extra">2020 - 2022</h5>
+				<p>Bei IS2 arbeitete ich als Full-Stack-Java/Javascript-Entwickler für die inSign-Digitale-Signatur-Plattform.
+				Diese Position führte mich in das Programmieren in einer komplexen und funktionsreichen Produktionsumgebung ein.</p>
+				<p>Meine Verantwortlichkeiten in dieser Position waren:</p>
+				<ul>
+					<li>Implementierung neuer Anwendungsfälle, von der Datenbank bis zur Benutzeroberfläche</li>
+					<li>Aktualisierung und Behebung bestehender Funktionen</li>
+					<li>Überarbeitung und Modernisierung der Benutzeroberfläche</li>
+					<li>Entwicklung von Unit- und Integrationstests</li>
+					<li>Kundensupport</li>
+				</ul>
+			</article>
+		</section>
+		<section id="education">
+			<header><h2>Bildung</h2></header>
+			<article>
+				<h3 class="article-header">Häme University of Applied Sciences, HAMK</h3>
+				<h4 class="article-subheader">Bachelor of Applied Science - Business Information Technology</h4>
+				<h5 class="article-extra">2019 - 2020</h5>
+				<p>Doppelabschlussprogramm in Finnland, organisiert von Erasmus, in Zusammenarbeit mit der Thomas More University. Dieses Programm half mir, meine Studien aus einer anderen Perspektive zu betrachten, aufgrund der individuelleren Lernmethoden im finnischen Bildungssystem.</p>
+				<p>Die in diesen Studien behandelten Themen waren:</p>
+				<ul>
+					<li>Cloud-basierte Full-Stack-Mobile-Entwicklung</li>
+					<li>Geschäftsverwaltung und Business Intelligence</li>
+					<li>Thesis in Geospatial Data Analysis</li>
+					<li>Projekt in Virtual Studio Movie Capturing</li>
+				</ul>
+			</article>
+			<article>
+				<h3 class="article-header">Thomas More University of Applied Sciences</h3>
+				<h4 class="article-subheader">Bachelor of Applied Science - Informatik</h4>
+				<h5 class="article-extra">2017 - 2020</h5>
+				<p>Bachelor-Studiengang in Belgien, mit einem Schwerpunkt auf Full-Stack-Anwendungsentwicklung. Diese Studien halfen mir, das Programmieren strukturierter anzugehen und führten mich in mehrere verschiedene Programmiersprachen und Arbeitsmethoden ein.</p>
+				<p>Die in diesen Studien behandelten Themen waren:</p>
+				<ul>
+					<li>Full-Stack-Anwendungsentwicklung in Windows- und Linux-Distributionen</li>
+					<li>ERP-Software-Management und Projektplanung</li>
+					<li>Grundlagen der Netzwerktechnik und eingebetteter Geräte</li>
+					<li>Grundlagen des Geschäftsmanagements</li>
+				</ul>
+			</article>
+			<article>
+				<h3 class="article-header">KU Leuven</h3>
+				<h4 class="article-subheader">Bachelor of Science, Biochemie und Biotechnologie, nicht abgeschlossen</h4>
+				<h5 class="article-extra">2016 - 2017</h5>
+				<p>Die ersten beiden Semester dieses Studiums lehrten mich einige Lernmethoden, ließen mich aber auch erkennen, dass dies kein Weg war, den ich weiterverfolgen wollte.</p>
+			</article>
+			<article>
+				<h3 class="article-header">Escuela Técnica Nº35, Crespo, Argentinien</h3>
+				<h4 class="article-subheader">High School, Betriebswirtschaft</h4>
+				<h5 class="article-extra">2015 - 2016</h5>
+				<p>Zwei Semester an einer lokalen, technischen High School während meines Austauschjahres in Argentinien, organisiert von AFS. Dies war meine erste langfristige internationale Erfahrung und hat mich begeistert.</p>
+			</article>
+			<article>
+				<h3 class="article-header">Onze-Lieve-Vrouwecollege, Antwerpen</h3>
+				<h4 class="article-subheader">High School, Latein-Wissenschaften</h4>
+				<h5 class="article-extra">2009 - 2015</h5>
+				<p>Allgemeine Hochschulbildung (ASO).</p>
+			</article>
+		</section>
+		<section id="skills">
+			<header><h2 v-t="'skills.header'">Fähigkeiten</h2></header>
+			<article></article>
+		</section>
+	</section>
 </Layout>
+
 
 <style>
 	.info-section {
